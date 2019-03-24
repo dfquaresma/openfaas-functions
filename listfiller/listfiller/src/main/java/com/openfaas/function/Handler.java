@@ -21,31 +21,31 @@ public class Handler implements com.openfaas.model.IHandler {
 
 	long countBeforeScavenge = scavenge.getCollectionCount();
 	long timeBeforeScavenge = scavenge.getCollectionTime();
-    long countBeforeMarkSweep = markSweep.getCollectionCount();
-    long timeBeforeMarkSweep = markSweep.getCollectionTime();
+	long countBeforeMarkSweep = markSweep.getCollectionCount();
+    	long timeBeforeMarkSweep = markSweep.getCollectionTime();
 
 	long before = System.currentTimeMillis();
 	callFunction();
-    long after = System.currentTimeMillis();
+    	long after = System.currentTimeMillis();
 
-    long countAfterScavenge = scavenge.getCollectionCount();
-    long timeAfterScavenge = scavenge.getCollectionTime();
-    long countAfterMarkSweep = markSweep.getCollectionCount();
-    long timeAfterMarkSweep = markSweep.getCollectionTime();
+	long countAfterScavenge = scavenge.getCollectionCount();
+	long timeAfterScavenge = scavenge.getCollectionTime();
+	long countAfterMarkSweep = markSweep.getCollectionCount();
+	long timeAfterMarkSweep = markSweep.getCollectionTime();
 
-    String processName = java.lang.management.ManagementFactory.getRuntimeMXBean().getName();
-    long pid = Long.parseLong(processName.split("@")[0]);
+	String processName = java.lang.management.ManagementFactory.getRuntimeMXBean().getName();
+	long pid = Long.parseLong(processName.split("@")[0]);
 
-    String data =
-    Long.toString(pid) + "," + // Pid
-            Long.toString(after - before) + "," + // Business Logic Time in Milliseconds
-            Long.toString(countAfterScavenge - countBeforeScavenge) + "," + // Scavenge Number of Collections
-            Long.toString(timeAfterScavenge - timeBeforeScavenge) + "," + // Scavenge Collections Time Spent in Milliseconds
-            Long.toString(countAfterMarkSweep - countBeforeMarkSweep) + "," + // MarkSweep Number of Collections
-            Long.toString(timeAfterMarkSweep - timeBeforeMarkSweep); // MarkSweep Collections Time Spent in Milliseconds
+	String data =
+	Long.toString(pid) + "," + // Pid
+	    Long.toString(after - before) + "," + // Business Logic Time in Milliseconds
+	    Long.toString(countAfterScavenge - countBeforeScavenge) + "," + // Scavenge Number of Collections
+	    Long.toString(timeAfterScavenge - timeBeforeScavenge) + "," + // Scavenge Collections Time Spent in Milliseconds
+	    Long.toString(countAfterMarkSweep - countBeforeMarkSweep) + "," + // MarkSweep Number of Collections
+	    Long.toString(timeAfterMarkSweep - timeBeforeMarkSweep); // MarkSweep Collections Time Spent in Milliseconds
 
 	Response res = new Response();
- 	res.setBody(data);
+	res.setBody(data);
 	return res;
     }
 
