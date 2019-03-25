@@ -1,0 +1,8 @@
+provider:
+  name: openfaas
+  gateway: http://127.0.0.1:8080
+functions:
+  runtime-vprinter:
+    lang: java11
+    handler: ./runtime-vprinter
+    image: dfquaresma/runtime-vprinter:latest
