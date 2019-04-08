@@ -5,6 +5,9 @@ import com.openfaas.model.IResponse;
 import com.openfaas.model.IRequest;
 import com.openfaas.model.Response;
 
+import java.util.List;
+import java.util.ArrayList;
+
 public class Handler implements com.openfaas.model.IHandler {
 
     public IResponse Handle(IRequest req) {
