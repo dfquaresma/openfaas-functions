@@ -18,7 +18,7 @@ public class Handler implements com.openfaas.model.IHandler {
             list.add(i);
         }
         
-        res.setBody("WOW");
+        res.setBody("GCI-Test Invoked!");
 	    return res;
     }
 }
