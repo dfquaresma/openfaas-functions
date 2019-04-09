@@ -1,5 +1,5 @@
 # GCI-Test
-A function that each invocation adds elements into a vector aiming to consume memory on purpose, just like [Listfiller](https://github.com/dfquaresma/openfaas-functions/blob/master/listfiller/README.md).
+A function that each invocation adds elements into a vector aiming to consume memory on purpose, just like [Listfiller](https://github.com/dfquaresma/openfaas-functions/blob/master/listfiller/README.md), but using [java11-gci template](https://github.com/dfquaresma/templates/tree/master/template/java11-gci).
 
 ## Details
 - **Number of elements**: [2^21 (2097152).](https://github.com/dfquaresma/openfaas-functions/blob/main-readme/listfiller/listfiller/src/main/java/com/openfaas/function/Handler.java#L53)
