@@ -11,5 +11,6 @@ func Handle(req []byte) string {
 	if err != nil {
 		return err.Error()
 	}
+	defer resp.Body.Close()
 	return fmt.Sprintf("Outcaller status: %s", resp.Status)
 }
