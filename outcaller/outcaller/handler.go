@@ -7,6 +7,9 @@ import (
 
 // Handle a serverless request
 func Handle(req []byte) string {
-	resp, _ := http.Get("http://google.com/")
+	resp, err := http.Get("http://google.com/")
+	if err != nil {
+		return err.Error()
+	}
 	return fmt.Sprintf("Outcaller status: %s", resp.Status)
 }
